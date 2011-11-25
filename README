@@ -1,1 +1,14 @@
-hello world
+This is a simple plugin that takes the RPG plugin, mcMMO, to a harder difficulty. When the player dies, all skill levels are reset to 0. This feature can be turned off per player or even per world with the use of permissions.
+
+As this is an extension to mcMMO...mcMMO is required!
+
+PERMISSIONS:
+statreset.user.check - allows usage of the /statreset command.
+statreset.user.reset - if true, the player's skills will be reset on death. If false, no stat loss will occur.
+
+COMMANDS:
+(/sr is the alias of /statreset)
+/statreset - shows if stat reset on death is on/off
+
+CONFIG:
+deathMessage - the string that is displayed when a player's stats are reset.
