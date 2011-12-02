@@ -7,6 +7,7 @@ import org.bukkit.event.entity.EntityListener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import com.gmail.nossr50.Users;
 import com.gmail.nossr50.datatypes.SkillType;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
 public class StatResetEntityListener extends EntityListener
 {
@@ -22,9 +23,19 @@ public class StatResetEntityListener extends EntityListener
 	    Entity ent = event.getEntity();
 	    if (ent instanceof Player) {
 	    	Player p = (Player) ent;
+		DamageCause c = p.getLastDamageCause().getCause();
 	    	if (p.hasPermission("statreset.user.reset")) {
-	    		p.sendMessage(ChatColor.YELLOW + plugin.getConfig().getString("deathMessage"));
-	    		Users.getProfile(p).modifyskill(SkillType.ALL, 0);
+			SkillType type = null;
+			if (c == DamageCause.FALL) {
+			    type = SkillType.ACROBATICS;
+			} else {
+			    // do nothing
+			}
+			if (type != null) {
+			    Users.getProfile(p).skillUp(type, -plugin.getConfig().getInt("levelLoss"));
+			    p.sendMessage(ChatColor.YELLOW + plugin.getConfig().getString("deathMessage"));
+			}
+
 	    	} else {
 	    		//p.sendMessage("This feature is off.");
 	    	}

@@ -42,7 +42,8 @@ public class StatReset extends JavaPlugin
 	private void loadConfiguration() 
 	{
 		getConfig().options().copyDefaults(true);
-		getConfig().addDefault("deathMessage", "Your mcMMO stats have been reset!");
+		getConfig().addDefault("deathMessage", "You have lost experience!");
+		getConfig().addDefault("levelLoss", "1");
 		saveConfig();
 	}
 }

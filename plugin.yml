@@ -1,0 +1,13 @@
+name: StatReset
+author: SHiLLySiT
+main: me.SHiLLySiT.StatReset.StatReset
+version: 0.2
+description: >
+             Resets mcMMO stats on player death
+commands:
+    statreset:
+      description: This is a demo command.
+      aliases: sr
+      permission: statreset.user.check
+      usage: |
+             /<command>
