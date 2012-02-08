@@ -1,0 +1,13 @@
+name: StatReset
+author: SHiLLySiT
+main: me.SHiLLySiT.StatReset.StatReset
+version: 1.0
+description: >
+             Resets mcMMO stats on player death
+commands:
+    statreset:
+      description: Shows if the death penalty is active.
+      aliases: sr
+      permission: statreset.user.check
+      usage: |
+             /<command> [arg]
