@@ -1,0 +1,19 @@
+This is a simple plugin that takes the RPG plugin, mcMMO, to the next level. When the player dies, a user-specified penalty is applied to the chosen skill(s). This feature can be turned off per player or even per world with the use of permissions.
+
+As this is an extension to mcMMO...mcMMO is required!
+
+PERMISSIONS:
+statreset.user.check - Allows usage of the /statreset check command.
+statreset.user.reset - If true, the player's skills will be reset on death. If false, no stat loss will occur.
+statreset.admin.deathmessage - Allows usage of the /statreset deathmessage command.
+
+COMMANDS:
+(/sr is the alias of /statreset)
+/statreset check - Shows if StatReset on death is on/off.
+/statreset deathmessage - Shows the displayed death message (for debug).
+
+CONFIG:
+type - The type of penalty; "level" to remove levels or "experience" to remove experience.
+penalty - When using type "level", this is the number of levels remove and if the number is set to 0, ALL levels are removed. When using type "experience" this is the percentage of current experience to be removed (eg 100 = 100% and 17 = 17%).
+affectedSkills - the list of the skills that are affected by the penalty.
+deathMessage - the string that is displayed when a player's stats are reset. Use "&skills" to display the skills affected and "&penalty" to display the applied penalty.
